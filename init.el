@@ -17,7 +17,6 @@
                       clojure-test-mode
                       nrepl
                       auto-complete
-                      ac-nrepl
                       org)
   "A list of packages to ensure are installed at launch.")
 
