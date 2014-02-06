@@ -3,6 +3,8 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
              '("tromey" . "http://tromey.com/elpa/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -17,7 +19,8 @@
                       clojure-test-mode
                       nrepl
                       auto-complete
-                      org)
+                      org
+                      auto-dim-other-buffers) 
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -30,10 +33,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default))))
+ '(custom-safe-themes
+   (quote
+    ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(auto-dim-other-buffers-face ((t (:background "dim gray")))))

@@ -63,3 +63,11 @@
 
 ;; Save here instead of littering current directory with emacs backup files
 (setq backup-directory-alist `(("." . "~/.saves")))
+
+;; activate auto-dim-other-buffer
+(add-hook 'after-init-hook (lambda ()
+  (when (fboundp 'auto-dim-other-buffers-mode)
+    (auto-dim-other-buffers-mode t))))
+
+;;disable the auto fill in text mode
+(add-hook 'text-mode-hook 'turn-off-auto-fill)
