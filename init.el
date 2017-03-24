@@ -3,10 +3,17 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
              '("tromey" . "http://tromey.com/elpa/") t)
+;; (add-to-list 'package-archives
+;;              '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "https://melpa.org/packages/"))
+;; (add-to-list 'package-archives
+;;              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
+;;
+;; try M-x package-refresh-contents when adding/changing one of the archives
+;;
 (when (not package-archive-contents)
   (package-refresh-contents))
 
@@ -15,11 +22,14 @@
                       starter-kit-lisp
                       starter-kit-bindings
                       starter-kit-ruby
-                      clojure-mode
-                      clojure-test-mode
-                      nrepl
+;;                      clojure-mode
+;;                      clojure-test-mode
+		      cider
+;;                      nrepl
                       auto-complete
                       org
+                      scala-mode2
+                      sbt-mode
                       auto-dim-other-buffers) 
   "A list of packages to ensure are installed at launch.")
 
